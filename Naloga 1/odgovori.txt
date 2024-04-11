@@ -1,0 +1,19 @@
+Question:Why would you use different color maps?
+Različni color mapi se interpretirajo drugače, ker naše oči ne vidijo barve linearno,
+tako da moramo adjustat glede na podatke katere hočemo prikazat.
+
+Question: How is inverting a grayscale value defined for uint8?
+We invert the value by substracting the value of pixel (i,j) from 255.
+For example Inverted[i,j] = 255 - I[i,j] where I is the original grayscale image and Inverted is its inverted image.
+
+Question: The histograms are usually normalized by dividing the result by the sum of all cells. Why is that?
+Če ne delimo, kot rezultat dobimo kolikokrat se je pojavila vrednost v določenem binu. Z deljenjem z vsoto vseh celic pa
+dejansko verjetnost prikaza določene vrednosti v binu.
+
+Question: Based on the results, which order of erosion and dilation operations produces opening and which closing?
+Opening = erosion + dilation
+Closing = dilation + erosion
+
+Question:Why is the background included in the mask and not the object? 
+How would you fix that in general? (just inverting the mask if necessary doesn’t count)
+Lahko bi pogledali katere barve je več, če je objekt na sredini, katere barve je vec na robovih, varianco,...
